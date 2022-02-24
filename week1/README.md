@@ -56,7 +56,7 @@
 
 7. 결과
     
-    - 프로젝트: CreateiveBlogOne
+    - 프로젝트: CreateiveBlog
     - 가상환경: v310DjCreativeBlog
 
     <br>
