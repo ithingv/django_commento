@@ -23,7 +23,7 @@
 
 1. **가상환경 설정**
 
-    <div align="center" style="margin: 30px 0px">
+    <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img.png">
     </div>
 
@@ -43,14 +43,14 @@
         <img src="./static/assets/img/week1/img_1.png">
     </div>
 
-    <div align="center" style="margin: 30px 0px">
+    <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_2.png">
     </div>
     
 
 6. `CreativeBlogOne`은 이미 완성된 프로젝트로 `CreativeBLog` 프로젝트를 다음과 같은 구조로 새롭게 만들어서 장고 프로젝트를 진행한다.
 
-    <div align="center" style="margin: 30px 0px">
+    <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_3.png">
     </div>
 
@@ -59,13 +59,13 @@
     - 프로젝트: CreateiveBlogOne
     - 가상환경: v310DjCreativeBlog
 
-    <div align="center" style="margin: 30px 0px">
+    <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_38.png">
     </div>
 
 8. CreativeBlog 프로젝트 admin 생성
     
-    <div align="center" style="margin: 30px 0px">
+    <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_5.png">
     </div>
 
@@ -82,10 +82,10 @@
     python manage.py migrate
     ```
 
-    <div align="center" style="margin: 30px 0px">
+    <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_6.png">
     </div>
-    <div align="center" style="margin: 30px 0px">
+    <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_7.png">
     </div>
 
