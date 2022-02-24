@@ -37,7 +37,7 @@
     startbootstrap-creative-gh-pages
     ```
 
-5. 앞으로 만들 가상환경들을 담을 `venv` 디렉토릴 생성 후 `CreativeBlog` 프로젝트의 가상환경으로 `v310Dj4CreativeBLog`을 생성한다.
+5. 앞으로 만들 가상환경들을 담을 `venv` 디렉토리를 생성 후 `CreativeBlog` 프로젝트의 가상환경으로 `v310Dj4CreativeBLog`을 생성한다.
 
     <div style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_1.png">
@@ -59,6 +59,7 @@
     - 프로젝트: CreateiveBlogOne
     - 가상환경: v310DjCreativeBlog
 
+    <br>
     <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_38.png">
     </div>
@@ -130,7 +131,7 @@
     </div>
 
 15. templates/home.html에 startboostrap의 index.html을 붙여넣는다.
-    > [코드확인]("./templates/home.html")
+    > [코드확인](./templates/home.html)
 
 16. static 폴더를 생성 후 그 안에 정적 파일들(js, css, assets)을 저장한다.
 
