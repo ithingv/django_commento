@@ -58,7 +58,13 @@
     
     - 프로젝트: CreateiveBlog
     - 가상환경: v310DjCreativeBlog
+    - [URL dispatcher](https://docs.djangoproject.com/en/4.0/topics/http/urls/)
+    - [asgi.py](https://docs.djangoproject.com/en/4.0/howto/deployment/asgi/) 
+        
+        An entry-point for ASGI-compatible web servers to serve your project.
+    - [wsgi.py](https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/)
 
+        An entry-point for WSGI-compatible web servers to serve your project
     <br>
     <div align="left" style="margin: 30px 0px">
         <img src="./static/assets/img/week1/img_38.png">
