@@ -1,4 +1,9 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
-class HomeView(TemplateView):
+from blog.models import Post
+
+class HomeView(ListView):
     template_name = 'home.html'
+    # model = Post
+    queryset = Post.objects.all()
+    paginate_by = 3
