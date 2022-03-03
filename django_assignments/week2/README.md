@@ -163,7 +163,6 @@ https://ccbv.co.uk/projects/Django/4.0/django.views.generic.list/ListView/
 
 13. detailview 바꾸고 template 변경을 위해 최종 post_detail.html을 복사해서 post_detail.html에 붙여넣는다.
 
-14. 
-<form class="mb-4" action="{% url 'blog:post-create' %}" method="post"> {% csrf_token %}
+14. 결과
 
-action="{% url 'blog:post-create' %}" 
+<img src="./static/assets/img/week1/img_39.png">
