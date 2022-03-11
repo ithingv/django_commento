@@ -1,9 +1,9 @@
 from django.shortcuts import render
-
+from django.urls import reverse, reverse_lazy
 # Create your views here.
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
-from blog.models import Category, Post, Tag
+from blog.models import Category, Post, Tag, Comment
 
 class PostLV(ListView):
     template_name = 'blog/post_list.html'
@@ -18,3 +18,12 @@ class PostDV(DetailView):
         context['cateList'] = Category.objects.all()
         context['tagList'] = Tag.objects.all()
         return context
+
+class CommentCV(CreateView):
+    model = Comment
+    fields= ['post', 'content']
+
+    def get_success_url(self):
+        url = reverse_lazy('blog:post-detail', args=(self.object.post.id,))
+        return f'{url}#post'
+    

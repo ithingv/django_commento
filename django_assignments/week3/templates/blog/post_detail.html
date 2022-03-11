@@ -62,7 +62,7 @@
                         <div class="card bg-light">
                             <div class="card-body">
                                 <!-- Comment form-->
-                                <form class="mb-4" action="{% url 'home' %}" method="post"> {% csrf_token %}
+                                <form class="mb-4" action="{% url 'blog:comment-create' %}" method="post"> {% csrf_token %}
                                     <textarea class="form-control" rows="3" name="content"
                                               placeholder="Leave your comment..."></textarea>
                                     <div class="d-flex justify-content-end mt-1">
