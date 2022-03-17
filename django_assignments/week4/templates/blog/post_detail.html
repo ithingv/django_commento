@@ -1,0 +1,132 @@
+{% extends 'base_shrink.html' %}
+
+{% load static %}
+
+{% block title %}post_detail.html{% endblock %}
+
+{% block extra-style %}
+    <style>
+        .my-comment-icon {
+            font-size: 3em;
+            color: darkgray;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <!-- Page content-->
+    <div class="page-section" id="post">
+        <div class="container mt-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <h1 class="fw-bolder mb-1">{{ object.title }}</h1>
+                        <hr>
+                        <div class="text-muted fst-italic mb-2">
+                            <span class="text-success fst-italic">{{ object.update_dt|date:"Y-m-d" }}</span> &emsp;
+                            <i class="fas fa-user-circle"></i> &nbsp;<span class="text-success fst-italic">shkim</span>
+                            &emsp;
+                            <i class="fas fa-copyright"></i> &nbsp;<span
+                                class="text-success fst-italic">{{ object.category }}</span>
+                            &emsp;
+                            <i class="fas fa-tag"></i> &nbsp;
+                            <span class="text-success fst-italic">
+                                {% for tag in object.tags.all %}
+                                    {% if not forloop.first %},{% endif %}
+                                    {{ tag }}
+                                {% endfor %}
+                            </span>
+                            &emsp;
+                        </div>
+                        <hr>
+                    </header>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Post content-->
+                    <article>
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded"
+                                                  src="{{ object.image.url }}" alt="{{ object.description }}"/>
+                        </figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                            <p class="fs-5 mb-4">{{ object.content|linebreaks }}</p>
+                        </section>
+                    </article>
+                    <!-- Comments section-->
+                    <section class="mb-5">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <!-- Comment form-->
+                                <form class="mb-4" action="{% url 'blog:comment-create' %}" method="post"> {% csrf_token %}
+                                    <textarea class="form-control" rows="3" name="content"
+                                              placeholder="Leave your comment..."></textarea>
+                                    <div class="d-flex justify-content-end mt-1">
+                                        <input type="reset" class="btn btn-outline-secondary btn-sm me-2" value="reset">
+                                        <input type="submit" class="btn btn-primary btn-sm" value="submit">
+                                    </div>
+                                    <input type="hidden" name="post" value="{{ object.id }}">
+                                </form>
+
+                                {% for comment in object.comment_set.all %}
+                                    <div class="d-flex mb-4">
+                                        <div class="flex-shrink-0 my-comment-icon"><i class="fas fa-user-circle"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <div class="fw-bold">{{ comment.update_dt|date:"Y-m-d H:i:s" }}</div>
+                                            {{ comment.content }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Prev/Next widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">prev post</div>
+                        <div class="card-body">
+                            <a href="{{ object.get_previous_by_update_dt.get_absolute_url }}#post">
+                                <h5>{{ object.get_previous_by_update_dt.title }}</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">next post</div>
+                        <div class="card-body">
+                            <a href="{{ object.get_next_by_update_dt.get_absolute_url }}#post">
+                                <h5>{{ object.get_next_by_update_dt.title }}</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Categories widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Categories</div>
+                        <div class="card-body">
+                            {% for cate in cateList %}
+                                <a href="{% url 'home' %}?category={{ cate }}#portfolio">{{ cate }}</a> &emsp;
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Tag Cloud widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Tag Cloud</div>
+                        <div class="card-body">
+                            {% for tag in tagList %}
+                                <a href="{% url 'home' %}?tag={{ tag }}#portfolio">{{ tag }}</a> &emsp;
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
