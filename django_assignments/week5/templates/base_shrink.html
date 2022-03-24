@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    {% include 'include/head.html' %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block extra-style %}{% endblock %}
+</head>
+
+<body id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink" id="mainNav">
+    {% include 'include/navbar.html' %}
+</nav>
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'include/footer.html' %}
+{% endblock %}
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+{% block extra-script %}{% endblock %}
+
+</body>
+</html>
