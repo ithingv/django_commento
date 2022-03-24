@@ -1,9 +1,10 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
 
 
 class Post(models.Model):
-    # owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, blank=True, null=True)
+    owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, blank=True, null=True)
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, blank=True, null=True)
     tags = models.ManyToManyField('Tag', blank=True)
     title = models.CharField('TITLE', max_length=50)

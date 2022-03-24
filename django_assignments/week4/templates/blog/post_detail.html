@@ -25,7 +25,7 @@
                         <hr>
                         <div class="text-muted fst-italic mb-2">
                             <span class="text-success fst-italic">{{ object.update_dt|date:"Y-m-d" }}</span> &emsp;
-                            <i class="fas fa-user-circle"></i> &nbsp;<span class="text-success fst-italic">shkim</span>
+                            <i class="fas fa-user-circle"></i> &nbsp;<span class="text-success fst-italic">{{object.owner}}</span>
                             &emsp;
                             <i class="fas fa-copyright"></i> &nbsp;<span
                                 class="text-success fst-italic">{{ object.category }}</span>
@@ -62,7 +62,7 @@
                         <div class="card bg-light">
                             <div class="card-body">
                                 <!-- Comment form-->
-                                <form class="mb-4" action="{% url 'blog:comment-create' %}" method="post"> {% csrf_token %}
+                                <form class="mb-4" action="{% url 'blog:post-create' %}" method="post"> {% csrf_token %}
                                     <textarea class="form-control" rows="3" name="content"
                                               placeholder="Leave your comment..."></textarea>
                                     <div class="d-flex justify-content-end mt-1">
